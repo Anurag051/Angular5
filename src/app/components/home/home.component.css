@@ -1,0 +1,35 @@
+.big_button{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 18px;
+  width: 50%;
+  padding:1%;
+}
+/*.intro-header {
+  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! 
+  padding-bottom: 50px;
+  text-align: center;
+  background-size: cover;
+}*/
+
+@media screen and (min-width: 768px) {
+    
+         .modal-dialog {
+    
+           width: 500px; /* New width for default modal */
+    
+         }
+    
+         .modal-sm {
+    
+           width: 350px; /* New width for small modal */
+    
+         }
+    
+     }

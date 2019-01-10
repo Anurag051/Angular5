@@ -1,0 +1,102 @@
+<div class="intro-message intro-header">
+		
+  <!-- SUBSCRIBE Youtube Channel
+https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
+-->
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Profile">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Educational Details">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-education"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Goals">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                      <div id="logbox">
+                        <form  id="signup" method="post" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+                          <h1 class="cus-h1">Complete the details</h1>
+                          <div class="row cus-row">
+                            <div class="col-md-5">
+                             <label for="firstName">First name:</label><input [(ngModel)]="user.firstName" name="firstname" type="text" placeholder="first name" autofocus="autofocus" required="required" class="input pass"/>
+                            </div>
+                          <div class="col-md-5">
+                              <label for="lastName">Last name:</label> <input [(ngModel)]="user.lastName" name="lastname" type="text" placeholder="lastname" autofocus="autofocus" required="required" class="input pass"/>
+                          </div>
+                        </div>
+                          <!--<input [(ngModel)]="user.username"name="username" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" class="input pass"/>-->
+                          <input [(ngModel)]="user.mobileno" name="mobileno" type="text" placeholder="mobile no." pattern="^[\d]{10}$" autofocus="autofocus" required="required" class="input pass"/>
+                          <!--<input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+                          <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/>-->
+                          <input [(ngModel)]="user.email" type="email" name="email" placeholder="Email address" class="input pass"/>
+                          <div *ngIf="isSignup">
+                            <input [(ngModel)]="user.roleType" type="text" name="roleType" class="input pass" readonly/>
+                          </div>
+                        </form>
+                      </div>
+                        <ul class="list-inline text-center">
+                            <li><button type="button" class="btn btn-primary next-step"><i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Step 2</h3>
+                        <p>This is step 2</p>
+                        <ul class="list-inline text-center">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step"><i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Step 3</h3>
+                        <p>This is step 3</p>
+                        <ul class="list-inline text-center">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step"><i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all steps.</p>
+                      <p><a href="https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/" target="_blank">Profile View</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>

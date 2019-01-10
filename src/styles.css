@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  color: white;
+}
+.intro-header {
+    margin-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    background-size: cover;
+  }
+  .nav > li > a.logout{
+    display: none;
+  }

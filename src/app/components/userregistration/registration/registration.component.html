@@ -1,0 +1,131 @@
+<div class="intro-header">
+  <h2 class="hmid">Register</h2>
+  <form name="signup_form" class="form-horizontal" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="form-group">
+      <label for="first_name" class="control-label col-xs-3">First Name</label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" name="firstName" placeholder="first name" [(ngModel)]="user.firstName">
+        <span class ="error-class">First name can not be empty !</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="last_name" class="control-label col-xs-3">Last Name</label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="user.lastName" placeholder="last name" >
+      </div>
+    </div>
+   <!-- <div class="form-group">
+      <label for="age_group" class="col-xs-3 control-label">Age Group</label>
+      <div class="col-xs-6 selectContainer">
+        <div class="input-group" 
+        a2e-datetimepicker
+        [date]="date"
+        [options]="a2eOptions"
+        (onChange)="dateChange($event)"
+        (onClick)="dateClick()"
+        >
+            <input class="form-control"/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+      </div>
+    </div>-->
+    <div class="form-group">
+        <label for="role_play" class="col-xs-3 control-label">Role play</label>
+        <div class="col-xs-6">
+          <input type="text" class="form-control" name="roleType" [(ngModel)]="user.roleType" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="id_proof" class="col-xs-3 control-label">UID</label>
+      <div class="col-xs-6 selectContainer">
+        <select class="form-control" [(ngModel)]="user.idType.code" (input)="selectedIDType($event)" name="idType">
+            <option *ngFor="let ids of idtypes" value= {{ids.code}}>{{ids.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group hideIdProof" *ngIf="someCondition">
+        <div class="col-sm-6 col-sm-offset-3">
+            <input type="text" class="form-control" id="idProof" name="idProof" placeholder="{{idType}}" [(ngModel)]="user.idProof">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="hEducation" class="col-xs-3 control-label">Hieghest Education</label>
+      <div class="col-xs-6 selectContainer">
+        <select class="form-control" [(ngModel)]="user.education.code" (input)="degreeHoldOn($event)" name="education">
+          <option *ngFor="let ids of qualifns" value= {{ids.code}}>{{ids.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="country_name" class="col-xs-3 control-label">Country</label>
+        <div class="col-xs-6 selectContainer">
+            <select class="form-control" [(ngModel)]="user.countryname.code" name="countryName" (input)="currentCntry($event)">
+                <option *ngFor="let country of countries" value= {{country.code}}>{{country.name}}</option>
+            </select>
+        </div>
+    </div>
+     <div class="form-group">
+        <label for="state_name" class="col-xs-3 control-label">State</label>
+        <div class="col-xs-6 selectContainer">
+            <select class="form-control" id="state" name="stateName" ng-change="getState()" [(ngModel)]="user.stateName">
+                <option value="">state</option>
+                <option></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="city_name" class="control-label col-xs-3">City</label>
+      <div class="col-xs-6">
+        <input type="text" class="form-control" id="city" name="city" placeholder="city" [(ngModel)]="user.city" >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address" class="control-label col-xs-3">Address</label>
+      <div class="col-xs-6">
+        <textarea class="form-control" rows="5" id="address" name="address" [(ngModel)]="user.address"></textarea>
+      </div>
+      </div>
+    <!-- Phone number control begin-->
+   <div class="form-group">
+      <label class="col-xs-3 control-label">Phone</label>
+      <div class="col-xs-6">								
+        <div class="phone-list">									
+          <div class="input-group phone-input">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="type-text">Type</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a class="changeType" href="javascript:;" data-type-value="phone">Phone</a></li>
+                <li><a class="changeType" href="javascript:;" data-type-value="fax">Fax</a></li>
+                <li><a class="changeType" href="javascript:;" data-type-value="mobile">Mobile</a></li>
+              </ul>
+            </span>
+            <input type="hidden" name="phone[1][type]" class="type-input" value="" [(ngModel)]="user.phoneType"/>
+            <input type="text" name="phone[1][number]" class="form-control" placeholder="+1 (999) 999 9999" [(ngModel)]="user.phno" />
+          </div>
+          
+        </div>	
+      </div>
+
+    </div>
+    <!-- Phone number control end -->
+    <div class="form-group ">
+      <label class="col-xs-3 control-label " for="email">
+      Email
+      </label>
+        <div class=" col-xs-6">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span> 
+          </div>
+          <input class="form-control" id="email" name="email" type="email" [(ngModel)]="user.email" />
+        </div>
+        </div>
+      </div>
+   <div class="form-group">
+      <div class="col-xs-10">
+        <button type="button" class="btn btn-primary" (click)="userForm.ngSubmit.emit()">submit</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="row intro-message" style="margin-top:50px;">
+    <div style="text-align:center;">
+      <h1>Welcome to our site</h1>
+      <div class="checkbox">
+        <input type="checkbox" data-toggle="toggle" class="disabled">
+      </div>
+    <hr class="intro-divider">
+    <div class="col s4 offset-s4">
+        <a routerLink="/mentor" (click)="userType($event)"><button class="big_button" >Mentor</button></a>
+    </div><br/>
+    <div class="col s4 offset-s4">
+      <a routerLink="/mentee" (click)="userType($event)"><button class="big_button">Mentee</button></a>
+    </div><br/>
+    <div class="col s4 offset-s4">
+      <a routerLink="/adhoc" (click)="userType($event)"><button class="big_button">Ad-Hoc</button></a>
+    </div>
+</div>

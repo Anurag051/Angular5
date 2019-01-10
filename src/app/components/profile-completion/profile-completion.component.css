@@ -1,0 +1,246 @@
+.wizard {
+    margin: 20px auto;
+    background:white;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+    }
+
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #ff00ff;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #ff00ff;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+span.round-tab i{
+    color:#00ffff;
+}
+.wizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #ff00ff;
+    
+}
+.wizard li.active span.round-tab i{
+    color: #5bc0de;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #ff00ff;
+}
+
+.wizard .nav-tabs > li {
+    width: 25%;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #ff00ff;
+}
+
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}
+/*User Details CSS: BEGIN*/
+::selection {
+    background-color: #b5e2e7;
+  }
+  
+ /* ::-moz-selection {
+    background-color: #8ac7d8;
+  }
+  
+  .container {
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+  }*/
+  
+  #logbox {
+    margin: 50px auto;
+    margin-top:0px;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 175%;
+    color: #757575;
+    font-weight: 300;
+  }
+  .cus-h1{
+      margin-top: 0em;
+  }
+  
+  h1, input {
+    font-family: "Open Sans", Helvetica, sans-serif;
+  }
+  .col6{
+      width: 50%;
+  }
+  .cus-row{
+    margin-left: 22px;
+    margin-right: 22px;
+}
+  .input {
+    width: 75%;
+    height: 50px;
+    display: block;
+    margin: 0 auto 15px;
+    padding: 0 15px;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    color: black;
+  }
+  .input:focus {
+    outline: none;
+    border-bottom-color: #3CC !important;
+  }
+  .input:hover {
+    border-bottom-color: #dcdcdc;
+  }
+  .input:invalid {
+    box-shadow: none;
+  }
+  
+  .pass:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+  
+  .inputButton {
+    position: relative;
+    width: 85%;
+    height: 50px;
+    display: block;
+    margin: 30px auto 30px;
+    color: white;
+    background-color: #3CC;
+    border: none;
+    -webkit-box-shadow: 0 5px 0 #2CADAD;
+    -moz-box-shadow: 0 5px 0 #2CADAD;
+    box-shadow: 0 5px 0 #2CADAD;
+  }
+  .inputButton:hover {
+    top: 2px;
+    -webkit-box-shadow: 0 3px 0 #2CADAD;
+    -moz-box-shadow: 0 3px 0 #2CADAD;
+    box-shadow: 0 3px 0 #2CADAD;
+  }
+  .inputButton:active {
+    top: 5px;
+    box-shadow: none;
+  }
+  .inputButton:focus {
+    outline: none;
+  }
+  .text-center.textColor{
+      color: black;
+  }
+  label {
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+    margin-top: 17px;
+    color: black;
+   }
+/*User Details CSS: END*/

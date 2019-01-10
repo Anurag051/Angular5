@@ -1,0 +1,25 @@
+<div id="logbox">
+  <form id="signup" method="post" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <h1>create an account</h1>
+    <div class="row cus-row">
+    <div class="col-md-6">
+        <input [(ngModel)]="user.firstName" name="firstname" type="text" placeholder="first name" autofocus="autofocus" required="required" class="input pass"/>
+    </div>
+    <div class="col-md-6">
+        <input [(ngModel)]="user.lastName" name="lastname" type="text" placeholder="lastname" autofocus="autofocus" required="required" class="input pass"/>
+    </div>
+  </div>
+    <input [(ngModel)]="user.username"name="username" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required" class="input pass"/>
+    <input [(ngModel)]="user.mobileno" name="mobileno" type="text" placeholder="mobile no." pattern="^[\d]{10}$" autofocus="autofocus" required="required" class="input pass"/>
+    <!--<input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+    <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/>-->
+    <input [(ngModel)]="user.email" type="email" name="email" placeholder="Email address" class="input pass"/>
+    <div *ngIf="isSignup">
+      <input [(ngModel)]="user.roleType" type="text" name="roleType" class="input pass" readonly/>
+    </div>
+    <input type="submit" value="Sign me up!" class="inputButton"/>
+    <div class="text-center textColor">
+        already have an account? <a routerLink="/login" id="login_id">Sign in</a>
+    </div>
+  </form>
+</div>
